@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Identifikasi Disleksia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <h2>Machine Learning Identifikasi Disleksia</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Riwayat</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <h1>Isi Data Anak</h1>
+            <p>Simpan data anak terlebih dahulu sebelum lakukan diagnosis.</p>
+            <form>
+                <label for="nama-anak">Nama Anak</label>
+                <input type="text" id="nama-anak" name="nama-anak" placeholder="Nama">
+                
+                <label for="umur">Umur</label>
+                <input type="text" id="umur" name="umur" placeholder="Umur">
+                
+                <label for="nama-wali">Nama Wali</label>
+                <input type="text" id="nama-wali" name="nama-wali" placeholder="Nama Wali">
+                
+                <label for="alamat">Alamat</label>
+                <input type="text" id="alamat" name="alamat" placeholder="Alamat">
+                
+                <label for="kontak">Kontak</label>
+                <input type="text" id="kontak" name="kontak" placeholder="Kontak">
+                
+                <button type="submit">Lanjut</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

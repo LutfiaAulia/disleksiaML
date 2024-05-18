@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Identifikasi Disleksia</title>
+    <link rel="stylesheet" href="styles.css">href="{{ url_for('static', filename='styles.css') }}">
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <h2>Machine Learning Identifikasi Disleksia</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Riwayat</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <h1>Formulir Perhitungan</h1>
+            <p>Berikan nilai rendah jika ciri-ciri tidak sesuai, dan nilai tinggi jika ciri-ciri sesuai.</p>
+            <form>
+                <label for="kosa-kata-buruk">Anak memiliki penguasaan kosa kata yang buruk</label>
+                <select id="kosa-kata-buruk" name="kosa-kata-buruk">
+                    <option value="">Skor</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="ingatan-buruk">Anak memiliki ingatan yang buruk</label>
+                <select id="ingatan-buruk" name="ingatan-buruk">
+                    <option value="">Skor</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="kecepatan-membaca-buruk">Anak memiliki kecepatan membaca dan berbicara yang buruk</label>
+                <select id="kecepatan-membaca-buruk" name="kecepatan-membaca-buruk">
+                    <option value="">Skor</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="klasifikasi-objek-buruk">Anak kesulitan mengklasifikasikan objek, simbol, dan bentuk</label>
+                <select id="klasifikasi-objek-buruk" name="klasifikasi-objek-buruk">
+                    <option value="">Skor</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="identifikasi-suara-buruk">Anak kesulitan mengidentifikasi persamaan dan perbedaan suara</label>
+                <select id="identifikasi-suara-buruk" name="identifikasi-suara-buruk">
+                    <option value="">Skor</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <button type="submit">Hitung</button>
+            </form>
+            <div class="result">
+                <h2>Hasil</h2>
+                <p class="score">0.1</p>
+                <p>Anak teridentifikasi Disleksia</p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
