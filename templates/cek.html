@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Machine Learning Identifikasi Disleksia</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 <body>
     <div class="container">
         <aside class="sidebar">
@@ -12,100 +14,123 @@
                 <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
                 <h2>Machine Learning Identifikasi Disleksia</h2>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Riwayat</a></li>
-                </ul>
-            </nav>
         </aside>
         <main class="main-content">
             <h1>Formulir Perhitungan</h1>
             <p>Berikan nilai rendah jika ciri-ciri tidak sesuai, dan nilai tinggi jika ciri-ciri sesuai.</p>
-            <form>
+            <form id="prediction-form">
                 <label for="kosa-kata-buruk">Anak memiliki penguasaan kosa kata yang buruk</label>
                 <select id="kosa-kata-buruk" name="kosa-kata-buruk">
                     <option value="">Skor</option>
-                    <option value="1">0.1</option>
-                    <option value="2">0.2</option>
-                    <option value="3">0.3</option>
-                    <option value="4">0.4</option>
-                    <option value="5">0.5</option>
-                    <option value="6">0.6</option>
-                    <option value="7">0.7</option>
-                    <option value="8">0.8</option>
-                    <option value="9">0.9</option>
-                    <option value="10">1.0</option>
+                    <option value="0.1">0.1</option>
+                    <option value="0.2">0.2</option>
+                    <option value="0.3">0.3</option>
+                    <option value="0.4">0.4</option>
+                    <option value="0.5">0.5</option>
+                    <option value="0.6">0.6</option>
+                    <option value="0.7">0.7</option>
+                    <option value="0.8">0.8</option>
+                    <option value="0.9">0.9</option>
+                    <option value="1.0">1.0</option>
                 </select>
 
                 <label for="ingatan-buruk">Anak memiliki ingatan yang buruk</label>
                 <select id="ingatan-buruk" name="ingatan-buruk">
                     <option value="">Skor</option>
-                    <option value="1">0.1</option>
-                    <option value="2">0.2</option>
-                    <option value="3">0.3</option>
-                    <option value="4">0.4</option>
-                    <option value="5">0.5</option>
-                    <option value="6">0.6</option>
-                    <option value="7">0.7</option>
-                    <option value="8">0.8</option>
-                    <option value="9">0.9</option>
-                    <option value="10">1.0</option>
+                    <option value="0.1">0.1</option>
+                    <option value="0.2">0.2</option>
+                    <option value="0.3">0.3</option>
+                    <option value="0.4">0.4</option>
+                    <option value="0.5">0.5</option>
+                    <option value="0.6">0.6</option>
+                    <option value="0.7">0.7</option>
+                    <option value="0.8">0.8</option>
+                    <option value="0.9">0.9</option>
+                    <option value="1.0">1.0</option>
                 </select>
 
                 <label for="kecepatan-membaca-buruk">Anak memiliki kecepatan membaca dan berbicara yang buruk</label>
                 <select id="kecepatan-membaca-buruk" name="kecepatan-membaca-buruk">
                     <option value="">Skor</option>
-                    <option value="1">0.1</option>
-                    <option value="2">0.2</option>
-                    <option value="3">0.3</option>
-                    <option value="4">0.4</option>
-                    <option value="5">0.5</option>
-                    <option value="6">0.6</option>
-                    <option value="7">0.7</option>
-                    <option value="8">0.8</option>
-                    <option value="9">0.9</option>
-                    <option value="10">1.0</option>
+                    <option value="0.1">0.1</option>
+                    <option value="0.2">0.2</option>
+                    <option value="0.3">0.3</option>
+                    <option value="0.4">0.4</option>
+                    <option value="0.5">0.5</option>
+                    <option value="0.6">0.6</option>
+                    <option value="0.7">0.7</option>
+                    <option value="0.8">0.8</option>
+                    <option value="0.9">0.9</option>
+                    <option value="1.0">1.0</option>
                 </select>
 
                 <label for="klasifikasi-objek-buruk">Anak kesulitan mengklasifikasikan objek, simbol, dan bentuk</label>
                 <select id="klasifikasi-objek-buruk" name="klasifikasi-objek-buruk">
                     <option value="">Skor</option>
-                    <option value="1">0.1</option>
-                    <option value="2">0.2</option>
-                    <option value="3">0.3</option>
-                    <option value="4">0.4</option>
-                    <option value="5">0.5</option>
-                    <option value="6">0.6</option>
-                    <option value="7">0.7</option>
-                    <option value="8">0.8</option>
-                    <option value="9">0.9</option>
-                    <option value="10">1.0</option>
+                    <option value="0.1">0.1</option>
+                    <option value="0.2">0.2</option>
+                    <option value="0.3">0.3</option>
+                    <option value="0.4">0.4</option>
+                    <option value="0.5">0.5</option>
+                    <option value="0.6">0.6</option>
+                    <option value="0.7">0.7</option>
+                    <option value="0.8">0.8</option>
+                    <option value="0.9">0.9</option>
+                    <option value="1.0">1.0</option>
                 </select>
 
                 <label for="identifikasi-suara-buruk">Anak kesulitan mengidentifikasi persamaan dan perbedaan suara</label>
                 <select id="identifikasi-suara-buruk" name="identifikasi-suara-buruk">
                     <option value="">Skor</option>
-                    <option value="1">0.1</option>
-                    <option value="2">0.2</option>
-                    <option value="3">0.3</option>
-                    <option value="4">0.4</option>
-                    <option value="5">0.5</option>
-                    <option value="6">0.6</option>
-                    <option value="7">0.7</option>
-                    <option value="8">0.8</option>
-                    <option value="9">0.9</option>
-                    <option value="10">1.0</option>
+                    <option value="0.1">0.1</option>
+                    <option value="0.2">0.2</option>
+                    <option value="0.3">0.3</option>
+                    <option value="0.4">0.4</option>
+                    <option value="0.5">0.5</option>
+                    <option value="0.6">0.6</option>
+                    <option value="0.7">0.7</option>
+                    <option value="0.8">0.8</option>
+                    <option value="0.9">0.9</option>
+                    <option value="1.0">1.0</option>
                 </select>
 
-                <button type="submit">Hitung</button>
+                <button type="button" onclick="makePrediction()">Hitung</button>
             </form>
             <div class="result">
                 <h2>Hasil</h2>
-                <p class="score">0.1</p>
-                <p>Anak teridentifikasi Disleksia</p>
+                <p id="prediction-result"></p>
+                <p id="prediction-probability"></p>
             </div>
         </main>
     </div>
+
+    <script>
+        function makePrediction() {
+            // Get form data
+            var formData = {
+                'kosa-kata-buruk': document.getElementById('kosa-kata-buruk').value,
+                'ingatan-buruk': document.getElementById('ingatan-buruk').value,
+                'kecepatan-membaca-buruk': document.getElementById('kecepatan-membaca-buruk').value,
+                'klasifikasi-objek-buruk': document.getElementById('klasifikasi-objek-buruk').value,
+                'identifikasi-suara-buruk': document.getElementById('identifikasi-suara-buruk').value
+            };
+
+            // Send data to Flask server using AJAX
+            $.ajax({
+                type: 'POST',
+                url: '/predict',
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    // Display the prediction result
+                    document.getElementById('prediction-result').innerText = 'Prediksi: ' + response.prediction;
+                    document.getElementById('prediction-probability').innerText = 'Probabilitas: ' + response.probability.join(', ');
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+    </script>
 </body>
 </html>
