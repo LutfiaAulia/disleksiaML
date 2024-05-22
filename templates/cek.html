@@ -98,15 +98,14 @@
             </form>
             <div class="result">
                 <h2>Hasil</h2>
-                <p id="prediction-result"></p>
-                <p id="prediction-probability"></p>
+                <p id="prediction-result" class="score"></p>
             </div>
         </main>
     </div>
 
     <script>
         function makePrediction() {
-            // Get form data
+            // megambil data dari form
             var formData = {
                 'kosa-kata-buruk': document.getElementById('kosa-kata-buruk').value,
                 'ingatan-buruk': document.getElementById('ingatan-buruk').value,
@@ -115,16 +114,16 @@
                 'identifikasi-suara-buruk': document.getElementById('identifikasi-suara-buruk').value
             };
 
-            // Send data to Flask server using AJAX
+            // Mengirim data ke flask
             $.ajax({
                 type: 'POST',
                 url: '/predict',
                 data: formData,
                 dataType: 'json',
                 success: function(response) {
-                    // Display the prediction result
-                    document.getElementById('prediction-result').innerText = 'Prediksi: ' + response.prediction;
-                    document.getElementById('prediction-probability').innerText = 'Probabilitas: ' + response.probability.join(', ');
+                    // Menampilkan hasil prediksi
+                    document.getElementById('prediction-result').innerText = 
+                         response.survey_score.toFixed(2) + '\n'+ response.prediction;
                 },
                 error: function(error) {
                     console.log(error);

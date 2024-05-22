@@ -13,7 +13,7 @@ def index():
 
 @app.route("/predict", methods=['POST'])
 def predict():
-    # Get the data from the POST request
+    # mengambil data
     data = request.form.to_dict()
     values = [
         float(data['kosa-kata-buruk']),
@@ -23,8 +23,8 @@ def predict():
         float(data['identifikasi-suara-buruk'])
     ]
     
-    # Calculate survey score
-    survey_score = sum(values) / 5
+    # menghitung survey score
+    survey_score = round(sum(values) / 5, 2)
 
     # Create the features array including the survey score
     features = np.array([[
@@ -36,16 +36,20 @@ def predict():
         survey_score
     ]])
     
-    # Make prediction
-    prediction = model.predict(features)
-    decision_values = model.decision_function(features)
+    # Memprediksi
+    prediction = model.predict(features)[0]
     
-    # Convert decision values to probability
-    probability = (np.exp(decision_values) / np.sum(np.exp(decision_values), axis=1)).tolist()
-
+    # Mengubah hasil menjadi teks
+    if prediction == 0:
+        result_text = "Not have dyslexia"
+    elif prediction == 1:
+        result_text = "Secondary dyslexia"
+    elif prediction == 2:
+        result_text = "Primary dyslexia"
+    
     return jsonify({
-        'prediction': int(prediction[0]),
-        'probability': probability[0]
+        'survey_score': survey_score,
+        'prediction': result_text
     })
 
 if __name__ == '__main__':
