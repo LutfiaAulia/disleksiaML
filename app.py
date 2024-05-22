@@ -4,7 +4,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Load the SVM model
+# Load SVM model
 model = joblib.load('svm_model.pkl')
 
 @app.route("/", methods=['GET'])
@@ -41,11 +41,11 @@ def predict():
     
     # Mengubah hasil menjadi teks
     if prediction == 0:
-        result_text = "Not have dyslexia"
+        result_text = "Normal"
     elif prediction == 1:
-        result_text = "Secondary dyslexia"
+        result_text = "Surface dyslexia"
     elif prediction == 2:
-        result_text = "Primary dyslexia"
+        result_text = "Deep dyslexia"
     
     return jsonify({
         'survey_score': survey_score,
